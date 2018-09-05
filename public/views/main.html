@@ -91,7 +91,7 @@
       <p class="movies__paragraph movies__paragraph--size-medium movies__paragraph--weight-bolder">{{movie.imdbRating}}</p>
       <p class="movies__paragraph movies__paragraph--weight-bolder">{{movie.imdbVotes}} votes</p>
       <md-button class="movies__button md-raised" ng-click="comments.add($event, movie._id, movie.Title)">add comment</md-button>
-      <img class="movies__svg" src="/img/delete.svg" alt="delete" title="Usuń Film: {{movie.Title}}" ng-click="movies.delete(movie)">
+      <img class="movies__svg" ng-src=".././img/delete.svg" alt="delete" title="Usuń Film: {{movie.Title}}" ng-click="movies.delete(movie)">
     </div>
   </div>
 </div>
@@ -111,7 +111,7 @@
     <md-option ng-value=true>decreasing</md-option>
   </md-select>
   <div class="container__comments" md-whiteframe="{{height}}" ng-init="height=5" ng-mouseenter="height=8" ng-mouseleave="height=5" layout="column" layout-align="center center" ng-repeat = "comment in comments.all | filter : idOfMovie | filter : titleOfMovie | orderBy : 'vote':reverse">
-    <img class="movies__svg" src="/img/delete.svg" alt="delete" title="Usuń Komentarz:" ng-click="comments.delete(comment)">
+    <img class="movies__svg" ng-src=".././img/delete.svg" alt="delete" title="Usuń Komentarz:" ng-click="comments.delete(comment)">
     <div class="comment__vote" layout="column" layout-align="center center">
       <p class="comment__paragraph comment__paragraph--color-brown comment__paragraph--size-medium">{{comment.user}}</p>
       <img class="comment__rating-img" ng-click="movies.show(comment.idOfMovie) ; comments.showCommentsList = !comments.showCommentsList"ng-src=".././img/star.png" alt="Star Designed by Freepik from www.flaticon.com" title = "id of movie : {{comment.idOfMovie}}"/>
