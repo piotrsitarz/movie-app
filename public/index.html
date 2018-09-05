@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="moviesAppV2">
+ <head>
+   <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+   <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAhYWFAMfHxwBra2sAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgMAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAhMAAAAAAAAAAAAAAAAAAjMzMwAAAAACERETAwAwAAIRERMBADAAAhEREwIAIAACIiIiAAAAAAAAAAAAAAAAIzAAIjMAAAAhMAAiMwAAACIgACIiAAAAIiAAIiIAAAAAAAAAAAAADg/wAA8f8AAOD/AADg/gAAgDwAAIAYAACAAAAAgAAAAIAAAACAGAAAgBwAAAQOAAAEDwAABA8AAAQPAACOHwAA" rel="icon" type="image/x-icon">
+   <link rel="stylesheet" href="css/styles.min.css">
+ </head>
+ <body ng-cloak>
+   <div ui-view="headerView"></div>
+   <div ui-view="mainView"></div>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+   <script src="https://unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+
+   <!-- Angular Material requires Angular.js Libraries -->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-animate.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-aria.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-messages.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+
+   <!-- PRODUCTION -->
+   <script src="js/application.min.js"></script>
+   <!-- DEVELOPMENT -->
+   <!-- <script src="/js/dev/app.js"></script>
+   <script src="/js/dev/controllers/header.controller.js"></script>
+   <script src="/js/dev/controllers/movies.controller.js"></script>
+   <script src="/js/dev/controllers/dialog.controller.js"></script>
+   <script src="/js/dev/services/movies.service.js"></script>
+   <script src="/js/dev/services/comments.service.js"></script>
+   <script src="/js/dev/services/toast.service.js"></script>
+   <script src="/js/dev/services/random_name.service.js"></script> -->
+ </body>
+</html>

@@ -1,0 +1,20 @@
+<div class="header" md-whiteframe="{{height}}" ng-init="height=5" ng-mouseenter="height=8" ng-mouseleave="height=5" layout="column" layout-align="center center">
+  <form class="header__form" name="searchingForm" layout="row" layout-align="center center" layout-xs="column" layout-align-xs="center center">
+    <md-input-container class="form__input-container">
+      <label>Title of Movie</label>
+      <input class="form__input" ng-model="movies.title" type="text" name="titleOfMovie" required/>
+      <div ng-messages="searchingForm.titleOfMovie.$error" role="alert">
+        <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="form__input-container">
+      <label>Year(optionally)</label>
+      <input class="form__input" ng-model="movies.year" type="number" name="year"/>
+    </md-input-container>
+    <md-button class="form__button md-raised" ng-click="movies.search(movies.title, movies.year) ; comments.showCommentsList = false" ng-disabled="searchingForm.$invalid">Search Movie</md-button>
+  </form>
+  <div class="header__buttons-wrapper" layout="row" layout-align="center center">
+    <md-button class="header__button md-raised" ng-click="movies.getAll() ; comments.showCommentsList = false">Get Movies</md-button>
+    <md-button class="header__button md-raised" ng-click="comments.getAll() ; movies.showMoviesList = false ; movies.movieFound = false ; movies.intro = false">Get Comments</md-button>
+  </div>
+</div>

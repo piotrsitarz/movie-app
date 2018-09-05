@@ -1,0 +1,125 @@
+<div class="container" layout="column" layout-align="center center" ng-if="movies.intro">
+  <svg version="1.1" id="clapper" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 277.446 277.446" style="enable-background:new 0 0 277.446 277.446;" xml:space="preserve">
+  <path class="clapper" d="M59.488,117.299c-0.504-4.237-2.007-8.171-4.273-11.556l202.992-67.776L247.552,6.051
+  	c-1.549-4.638-6.566-7.141-11.201-5.594L15.54,74.182c-4.635,1.547-7.143,6.563-5.594,11.201l5.225,15.647
+  	c-5.216,4.843-8.488,11.752-8.488,19.415c0,9.924,5.486,18.586,13.582,23.127v125.02c0,4.891,3.967,8.853,8.854,8.853h232.793
+  	c4.885,0,8.852-3.963,8.852-8.853V117.299H59.488z M188.869,26.724l26.875-8.973l-6.467,26.14l-26.875,8.973L188.869,26.724z
+  	 M122.47,48.893l26.877-8.973l-6.467,26.139l-26.875,8.974L122.47,48.893z M33.181,133.946c-7.442,0-13.498-6.056-13.498-13.5
+  	c0-7.444,6.056-13.5,13.498-13.5c7.444,0,13.5,6.056,13.5,13.5C46.681,127.89,40.625,133.946,33.181,133.946z M56.074,71.062
+  	l26.877-8.973l-6.467,26.14l-26.877,8.974L56.074,71.062z M82.476,147.192H54.142l14.412-22.746h28.334L82.476,147.192z
+  	 M138.554,124.446h28.334l-14.412,22.746h-28.334L138.554,124.446z M131.599,234.372v-60l47.783,30L131.599,234.372z
+  	 M222.476,147.192h-28.334l14.412-22.746h28.334L222.476,147.192z"/>
+     <animate id="clapper" attributeType="CSS" attributeName="fill" from="white" to="black" dur="2s" begin="6s" fill="freeze" />
+  </svg>
+</div>
+<div class="container" layout="column" layout-align="center center" ng-if="movies.movieFound">
+  <div class="container__movie" layout="row" layout-sm="column" layout-xs="column" layout-align-sm="center center" layout-align-xs="center center" layout-padding>
+    <div class="movie__img-wrapper" layout="row" layout-align="end center" layout-align-sm="center center" layout-align-xs="center center" flex="50" flex-sm="100" flex-xs="100">
+      <a ng-href="{{movies.found.Website}}" target="_blank">
+        <img class="movie__img" ng-src="{{movies.found.Poster}}" alt="Poster of {{movies.found.Title}} movie"/>
+      </a>
+    </div>
+    <div class="movie__description">
+      <div class="movie__paragraph-wrapper" layout="row" layout-align-sm="center center" layout-align-xs="center center">
+        <p class="movie__paragraph movie__paragraph--size-big movie__paragraph--weight-bold" ng-if="movies.found.Title !== 'N/A'">{{movies.found.Title}}<span class="movie__paragraph movie__paragraph--size-medium movie__paragraph--weight-normal" ng-if="movies.found.Year !== 'N/A'"> ({{movies.found.Year}})</span></p>
+      </div>
+      <p class="movie__paragraph movie__paragraph--margin-top movie__paragraph--margin-bottom" ng-if="movies.found.Runtime !== 'N/A'">{{movies.found.Runtime}}</p>
+      <p class="movie__paragraph movie__paragraph--margin-top--medium movie__paragraph--margin-bottom--medium" ng-if="movies.found.Plot !== 'N/A'">{{movies.found.Plot}}</p>
+      <div class="movie__paragraph-wrapper" layout="row" ng-if="movies.found.Director !== 'N/A'">
+        <p class="movie__paragraph movie__paragraph--color-grey" flex="20">director:</p>
+        <p class="movie__paragraph movie__paragraph--color-brown" flex="80">{{movies.found.Director}}</p>
+      </div>
+      <div class="movie__paragraph-wrapper" layout="row" ng-if="movies.found.Writer !== 'N/A'">
+        <p class="movie__paragraph movie__paragraph--color-grey" flex="20">writer:</p>
+        <p class="movie__paragraph movie__paragraph--color-brown" flex="80">{{movies.found.Writer}}</p>
+      </div>
+      <div class="movie__paragraph-wrapper" layout="row" ng-if="movies.found.Genre !== 'N/A'">
+        <p class="movie__paragraph movie__paragraph--color-grey" flex="20">genre:</p>
+        <p class="movie__paragraph movie__paragraph--color-brown" flex="80">{{movies.found.Genre}}</p>
+      </div>
+      <div class="movie__paragraph-wrapper" layout="row" ng-if="movies.found.Country !== 'N/A'">
+        <p class="movie__paragraph movie__paragraph--color-grey" flex="20">country:</p>
+        <p class="movie__paragraph movie__paragraph--color-brown" flex="80">{{movies.found.Country}}</p>
+      </div>
+      <div class="movie__paragraph-wrapper" layout="row" ng-if="movies.found.Released !== 'N/A'">
+        <p class="movie__paragraph movie__paragraph--color-grey" flex="20">released:</p>
+        <p class="movie__paragraph movie__paragraph--color-brown" flex="80">{{movies.found.Released}}</p>
+      </div>
+      <div class="movie__paragraph-wrapper" layout="row" ng-if="movies.found.Awards !== 'N/A'">
+        <p class="movie__paragraph movie__paragraph--color-grey" flex="20">awards:</p>
+        <p class="movie__paragraph movie__paragraph--color-brown" flex="80">{{movies.found.Awards}}</p>
+      </div>
+      <div class="movie__paragraph-wrapper" layout="row" ng-if="movies.found.Actors !== 'N/A'">
+        <p class="movie__paragraph movie__paragraph--color-grey" flex="20">actors:</p>
+        <p class="movie__paragraph movie__paragraph--color-brown" flex="80">{{movies.found.Actors}}</p>
+      </div>
+      <div class="movie__rating-wrapper" layout="row" layout-align="start center">
+        <img class="movie__rating-img" ng-src=".././img/star.png" alt="Star Designed by Freepik from www.flaticon.com"/>
+        <p class="movie__paragraph movie__paragraph--margin-left movie__paragraph--margin-right movie__paragraph--size-big movie__paragraph--weight-bold" ng-if="movies.found.imdbRating !== 'N/A'">{{movies.found.imdbRating}}</p>
+        <p class="movie__paragraph" ng-if="movies.found.imdbVotes !== 'N/A'">{{movies.found.imdbVotes}} votes</p>
+      </div>
+    </div>
+  </div>
+  <md-button class="container__button md-raised" ng-click="movies.save(movies.found)">Save Movie</md-button>
+</div>
+<div class="container" ng-if="movies.showMoviesList" layout="column" layout-align="center center">
+  <div class="container__filtration" layout="row" layout-align="center center" layout-xs="column" layout-align="center center">
+    <div class="container__filter">
+      <md-select class="filter__select" ng-model="genre" placeholder="Filter by: Genre">
+        <md-option ng-value="">All</md-option>
+        <md-option ng-value="genre" ng-repeat="genre in movies.genres.sort()">{{genre}}</md-option>
+      </md-select>
+    </div>
+    <div class="container__sort" layout="row" layout-align="center center" layout-xs="column" layout-align="center center">
+      <md-select class="sort__select" ng-model="sortProperty" placeholder="Sort by:">
+        <md-option ng-value="property" ng-repeat="property in movies.sortProperties">{{property}}</md-option>
+      </md-select>
+      <md-checkbox class="sort__checkbox" ng-model="movies.increasing">
+        <p class="sort__paragraph">increasing</p>
+      </md-checkbox>
+    </div>
+  </div>
+  <div class="container__movies" md-whiteframe="{{height}}" ng-init="height=5" ng-mouseenter="height=8" ng-mouseleave="height=5" layout="row" ng-repeat="(index, movie) in movies.all | orderBy : sortProperty:reverse=!movies.increasing | filter : genre track by $index">
+    <div class="movies__index" layout="column" layout-align="center center">
+      <div class="movies__paragraph movies__paragraph--size-big movies__paragraph--weight-bolder">{{index}}</div>
+    </div>
+    <img class="movies__img" ng-src="{{movie.Poster}}" alt="Poster of {{movie.Title}} movie"/>
+    <div class="movies__description" layout="column" layout-align="center center">
+      <p class="movies__paragraph movies__paragraph--size-big movies__paragraph--weight-bolder movies__paragraph--color-grey" ng-click="movies.show(movie._id)">{{movie.Title}}<span class="movies__paragraph--weight-normal"> ({{movie.Year}})</span></p>
+      <img class="movies__rating-img" ng-src=".././img/star.png" alt="Star Designed by Freepik from www.flaticon.com"/>
+      <p class="movies__paragraph movies__paragraph--size-medium movies__paragraph--weight-bolder">{{movie.imdbRating}}</p>
+      <p class="movies__paragraph movies__paragraph--weight-bolder">{{movie.imdbVotes}} votes</p>
+      <md-button class="movies__button md-raised" ng-click="comments.add($event, movie._id, movie.Title)">add comment</md-button>
+      <img class="movies__svg" src="/img/delete.svg" alt="delete" title="Usuń Film: {{movie.Title}}" ng-click="movies.delete(movie)">
+    </div>
+  </div>
+</div>
+<div class="container" ng-if="comments.showCommentsList" layout="column" layout-align="center center">
+  <div class="container__filtration" layout="row" layout-align="center center" layout-xs="column" layout-align="center center">
+    <md-input-container class="comments__input-container">
+      <label>id of movie to filter</label>
+      <input class="comments__input" ng-model="idOfMovie" type="text" name="idOfMovie"/>
+    </md-input-container>
+    <md-input-container class="comments__input-container">
+      <label>title of movie to filter</label>
+      <input class="comments__input" ng-model="titleOfMovie" type="text" name="titleOfMovie"/>
+    </md-input-container>
+  </div>
+  <md-select class="comments__select" ng-model="reverse" placeholder="Sort by Rate">
+    <md-option ng-value=false>increasing</md-option>
+    <md-option ng-value=true>decreasing</md-option>
+  </md-select>
+  <div class="container__comments" md-whiteframe="{{height}}" ng-init="height=5" ng-mouseenter="height=8" ng-mouseleave="height=5" layout="column" layout-align="center center" ng-repeat = "comment in comments.all | filter : idOfMovie | filter : titleOfMovie | orderBy : 'vote':reverse">
+    <img class="movies__svg" src="/img/delete.svg" alt="delete" title="Usuń Komentarz:" ng-click="comments.delete(comment)">
+    <div class="comment__vote" layout="column" layout-align="center center">
+      <p class="comment__paragraph comment__paragraph--color-brown comment__paragraph--size-medium">{{comment.user}}</p>
+      <img class="comment__rating-img" ng-click="movies.show(comment.idOfMovie) ; comments.showCommentsList = !comments.showCommentsList"ng-src=".././img/star.png" alt="Star Designed by Freepik from www.flaticon.com" title = "id of movie : {{comment.idOfMovie}}"/>
+      <p class="comment__paragraph comment__paragraph--size-large comment__paragraph--weight-bold">{{comment.vote}}</p>
+      <p class="comment__paragraph comment__paragraph--size-medium comment__paragraph--align-center">{{comment.titleOfMovie}}</p>
+    </div>
+    <div class="comment__content">
+      <p class="comment__paragraph comment__paragraph--style-italic">"{{comment.content}}"</p>
+    </div>
+  </div>
+</div>

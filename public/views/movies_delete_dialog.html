@@ -1,0 +1,13 @@
+<md-dialog aria-label="Usuń Film">
+    <md-dialog-content class="md-dialog-content">
+      <p class="dialog__delete">Are you sure to <span class="bold">delete</span> a movie : <span class="bold">"{{movieTitleToDelete}}"?</span></p>
+    </md-dialog-content>
+    <md-dialog-actions class="md-toolbar-delete" layout="row">
+      <md-button ng-click="dialogHide()">
+        Nie
+      </md-button>
+      <md-button ng-click="confirmedDeleteMovie()">
+        Tak
+      </md-button>
+    </md-dialog-actions>
+</md-dialog>
