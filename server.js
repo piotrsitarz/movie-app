@@ -21,9 +21,9 @@ app.post('/moviesSearch', (req,res) => {
   let movieTitle = req.body.title;
   let movieYear = req.body.year;
   if (req.body.year) {
-   reqUrl = `http://www.omdbapi.com/?t=${movieTitle}&y=${movieYear}&apiKey=${apiKey}`;
+   reqUrl = `https://www.omdbapi.com/?t=${movieTitle}&y=${movieYear}&apiKey=${apiKey}`;
   } else {
-   reqUrl = `http://www.omdbapi.com/?t=${movieTitle}&apikey=${apiKey}`;
+   reqUrl = `https://www.omdbapi.com/?t=${movieTitle}&apikey=${apiKey}`;
   }
   axios.get(reqUrl)
     .then(function (response) {
