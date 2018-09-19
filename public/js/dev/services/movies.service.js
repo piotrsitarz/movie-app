@@ -7,7 +7,7 @@ angular.module('moviesAppV2')
       var factory = {};
 
       factory.toast = toast;
-      factory.sortProperties = ['Year','imdbRating'];
+      factory.sortProperties = ['Year','IMDB Rating'];
       factory.increasing = true;
       factory.intro = true;
       factory.toDelete = {};
